@@ -1,0 +1,39 @@
+{
+  "team_id": "REPLACE_WITH_REGISTERED_TEAM_ID",
+  "domain": "autonomous_ai_agents",
+  "language_scope": [
+    "en"
+  ],
+  "african_alpha_claim": true,
+  "budget_laptop_claim": true,
+  "submitter": {
+    "name": "Moussa Khelifa",
+    "email": "REPLACE_WITH_REGISTERED_EMAIL",
+    "github_handle": "REPLACE_WITH_GITHUB_HANDLE"
+  },
+  "cross_disciplinary_pairing": {
+    "discipline": "emergency_management",
+    "load_bearing": true,
+    "description": "AEGIS combines an offline deterministic crisis-decision core with optional local LLM refinement for disaster and emergency operations in connectivity-constrained African environments."
+  },
+  "test_prompts": [
+    {
+      "prompt_id": "tp_001",
+      "prompt": "You are an offline autonomous crisis-response agent. A flooded remote community has 1,200 people, 35 injured, 8 missing, 200 liters of clean water, 6 generator-hours, 2 nurses, 12 volunteers, one satellite phone, no electricity, and no internet. Produce a concise operational plan that ranks five priorities, allocates only the stated resources without exceeding totals, identifies three immediate risks, states three critical dependencies, and separates known facts from unknowns. Never invent resources."
+    },
+    {
+      "prompt_id": "tp_002",
+      "prompt": "You are an offline autonomous crisis-response agent. A remote settlement has 1,500 people, 18 injured, 4 missing, 250 liters of clean water, 5 generator-hours, 2 nurses, 15 volunteers, one satellite phone, no electricity, and no internet. Produce exactly five prioritized actions using only stated resources. Explicitly mark unknown information, do not assume infrastructure or external support, and do not allocate more resources than are available."
+    }
+  ],
+  "model": {
+    "name": "Qwen3-4B-Q4_K_M",
+    "runtime": "llama.cpp",
+    "quantization": "GGUF Q4_K_M",
+    "parameters_estimate": "4.0B",
+    "packaging": "binary_bundle"
+  },
+  "_runtime": {
+    "model_path": "model/Qwen3-4B-Q4_K_M.gguf"
+  }
+}

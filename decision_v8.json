@@ -1,0 +1,84 @@
+{
+  "system": "AEGIS OMEGA AFRICA",
+  "version": "8.2-competition-final",
+  "timestamp_utc": "2026-08-25T00:21:59.394334+00:00",
+  "status": "VERIFIED",
+  "architecture": {
+    "decision_core": "deterministic",
+    "local_llm": "optional refinement",
+    "cloud_dependency": false,
+    "safe_fallback": true
+  },
+  "crisis": "flood",
+  "severity": {
+    "label": "CRITICAL",
+    "internal_score": 88
+  },
+  "rule_confidence": 98,
+  "timing": {
+    "immediate_decision_sec": 6.4e-05,
+    "ai_refinement_sec": 0.0,
+    "total_pipeline_sec": 0.0248
+  },
+  "ai": {
+    "requested": false,
+    "endpoint": null,
+    "status": "DISABLED - DETERMINISTIC SAFE MODE",
+    "violations": [],
+    "raw_output": null
+  },
+  "decision": {
+    "priorities": [
+      "Prioritize assessment of the 35 reported injured using the 2 available nurses.",
+      "Prioritize locating the 8 reported missing people using the 12 available volunteers within their known safe capabilities.",
+      "Protect and ration the available 200 L of clean water; additional water availability is UNKNOWN.",
+      "Preserve the available 6 generator-hours until a verified critical use and compatible load are known.",
+      "Preserve the 1 satellite phone for prioritized coordination if connectivity is available; signal availability is UNKNOWN."
+    ],
+    "allocation": {
+      "clean_water_liters_available": 200,
+      "generator_hours_available": 6,
+      "nurses_available": 2,
+      "volunteers_available": 12,
+      "satellite_phones_available": 1
+    },
+    "risks": [
+      "Injured people may deteriorate while trained personnel are limited.",
+      "Missing people remain at risk while their condition and location are unknown.",
+      "Clean-water availability is severely constrained relative to the population."
+    ],
+    "dependencies": [
+      "Medical prioritization depends on the 2 available nurses.",
+      "Search activity depends on the 12 available volunteers and safe access.",
+      "External coordination via satellite phone depends on actual signal availability."
+    ],
+    "facts": {
+      "crisis": "flood",
+      "population": 1200,
+      "injured": 35,
+      "missing": 8,
+      "clean_water_liters": 200,
+      "generator_hours": 6,
+      "nurses": 2,
+      "volunteers": 12,
+      "satellite_phones": 1,
+      "electricity": 0,
+      "internet": 0
+    },
+    "unknowns": [
+      "Locations and conditions of the missing people.",
+      "Severity distribution of the reported injuries.",
+      "Availability of additional water, food, medicine, shelter, transport, or personnel.",
+      "Generator load compatibility and safe operating conditions.",
+      "Satellite-phone signal availability and reachable external responders.",
+      "Flood evolution, road access, weather, and structural hazards."
+    ]
+  },
+  "safety": {
+    "invented_resources_allowed": false,
+    "resource_limits_enforced": true,
+    "deterministic_fallback": true,
+    "ai_output_requires_validation": true,
+    "ai_can_block_immediate_decision": false
+  }
+}

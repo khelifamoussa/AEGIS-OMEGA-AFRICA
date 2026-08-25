@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>AEGIS OMEGA AFRICA</title>
+<style>
+:root{
+ --bg:#040b13; --panel:#071725; --panel2:#081d2f; --line:#13486b;
+ --cyan:#28b8ff; --green:#22f47a; --red:#ff4154; --amber:#ffd23f;
+ --violet:#7347ff; --text:#f5fbff; --muted:#8eb2c9;
+}
+*{box-sizing:border-box} body{margin:0;background:
+radial-gradient(circle at 70% 0%,#0c2750 0,transparent 27%),
+linear-gradient(180deg,#02070d,#06111c 55%,#030911);color:var(--text);
+font-family:Inter,Segoe UI,Arial,sans-serif;min-height:100vh}
+button,input,select{font:inherit}
+.app{display:grid;grid-template-columns:250px 1fr;min-height:100vh}
+.sidebar{border-right:1px solid #12334c;background:#03111d;padding:18px;position:sticky;top:0;height:100vh}
+.brand{display:flex;gap:12px;align-items:center;padding:4px 5px 22px}
+.logo{width:48px;height:54px;border:2px solid var(--cyan);clip-path:polygon(50% 0,92% 18%,86% 77%,50% 100%,14% 77%,8% 18%);display:grid;place-items:center;color:var(--cyan);font-size:28px;font-weight:800}
+.brand h1{font-size:20px;line-height:1;margin:0}.brand small{color:var(--cyan);font-weight:700}
+.nav button{width:100%;display:flex;gap:12px;align-items:center;border:1px solid transparent;color:#d9effc;background:transparent;padding:14px;border-radius:10px;margin:5px 0;text-align:left}
+.nav button:hover,.nav .active{background:#082b49;border-color:#0f72b8;color:white}
+.statusbox{position:absolute;bottom:18px;left:18px;right:18px;border:1px solid #164764;border-radius:12px;padding:14px;background:#061927}
+.st{display:flex;justify-content:space-between;margin:11px 0;color:#d4e7f3}.ok{color:var(--green);font-weight:800}.off{color:var(--red);font-weight:800}
+.main{padding:18px 22px 28px;overflow:hidden}
+.topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.mode{border:1px solid #15557d;padding:9px 16px;border-radius:10px;color:var(--green);font-weight:800;background:#03151c;box-shadow:0 0 18px #00ff6a12}
+.lang button{border:1px solid #144768;background:#07192a;color:white;padding:9px 14px}.lang .on{background:#0b4f85}
+.hero{border:1px solid #164564;border-radius:14px;padding:26px 30px;background:
+linear-gradient(90deg,#071525 0%,#071525 42%,transparent),
+radial-gradient(circle at 73% 54%,#0474ff42,transparent 14%),
+repeating-linear-gradient(90deg,transparent 0 34px,#0a4f7c30 35px 36px);
+position:relative;overflow:hidden}
+.hero:after{content:"Ω";position:absolute;right:55px;top:-25px;font-size:150px;color:#25a8ff;opacity:.85;text-shadow:0 0 30px #1ca9ff}
+.hero h2{font-size:28px;margin:0 0 10px}.hero p{color:#d4e7f3;margin:4px 0}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid #174967;border-radius:14px;overflow:hidden;margin:12px 0;background:#071724}
+.step{padding:15px 18px;border-right:1px solid #153f59;display:flex;gap:12px;align-items:center}.step:last-child{border:0}
+.n{min-width:42px;height:42px;border:2px solid var(--cyan);border-radius:50%;display:grid;place-items:center;font-size:21px;font-weight:800}.step:nth-child(1) .n{color:var(--green);border-color:var(--green)}.step:nth-child(3) .n{color:#d267ff;border-color:#d267ff}.step:nth-child(4) .n{color:var(--amber);border-color:var(--amber)}
+.grid{display:grid;grid-template-columns:1.05fr 1fr 1fr 1fr 1.35fr;gap:12px}
+.card{background:linear-gradient(180deg,#071a2a,#061522);border:1px solid #174d70;border-radius:14px;padding:16px;min-height:190px;box-shadow:0 8px 30px #0005}
+.card h3{font-size:14px;margin:0 0 12px}.sub{display:block;font-size:11px;color:var(--muted);font-weight:400;margin-top:3px}
+.severity{border:1px solid var(--red);border-radius:10px;background:#3a0a16;padding:24px;text-align:center;color:var(--red);font-size:30px;font-weight:900;margin-top:20px}
+.meter{height:10px;background:linear-gradient(90deg,#18d75e,#f1e832,#ff4253);border-radius:10px;margin-top:20px;position:relative}.meter:after{content:"";position:absolute;right:8%;top:-6px;width:12px;height:22px;background:white;border-radius:8px}
+.ring{width:112px;height:112px;border:10px solid var(--green);border-radius:50%;display:grid;place-items:center;margin:20px auto 10px;box-shadow:0 0 25px #20ff7930;font-size:32px}
+.time{font-size:48px;color:#31aaff;margin:40px 0 6px}.ai{font-size:18px;color:var(--green);font-weight:800;margin-top:46px}
+.summary .row{display:flex;justify-content:space-between;border-bottom:1px solid #15384f;padding:7px 0;font-size:13px}.summary b{font-size:16px}
+.lower{display:grid;grid-template-columns:1.05fr 1.45fr .9fr;gap:12px;margin-top:12px}
+.priorities{min-height:310px}.priority{padding:11px;border-bottom:1px solid #13394f;display:grid;grid-template-columns:30px 1fr auto;gap:9px;align-items:center;font-size:13px}.badge{width:24px;height:24px;border:1px solid #ff475a;border-radius:50%;display:grid;place-items:center}.p1{color:var(--red);font-weight:800}
+.map{min-height:310px;position:relative;overflow:hidden;background:
+radial-gradient(ellipse at 50% 50%,#8b1f2f7f 0,transparent 32%),
+repeating-linear-gradient(135deg,#061522 0 29px,#0a2b42 30px 31px);
+border-radius:10px}.river{position:absolute;width:115%;height:30px;background:#1766c5;transform:rotate(-11deg);left:-8%;top:52%;box-shadow:0 0 14px #1f8cff}.pin{position:absolute;width:34px;height:34px;border:2px solid #61c7ff;background:#0d4774;border-radius:50%;display:grid;place-items:center;font-weight:900}.pin.a{left:22%;top:53%}.pin.b{left:57%;top:26%;background:#088b52}.pin.c{left:70%;top:56%;background:#9f302d}
+.decision{border:1px solid #0b9f50;background:#053122;border-radius:12px;padding:20px;color:white}.decision h2{color:var(--green);font-size:20px}.decision p{color:#d7eee5;font-size:13px;line-height:1.5}
+.actions{display:grid;grid-template-columns:1fr 1.4fr 1fr 1fr;gap:12px;margin-top:12px}.actions button{padding:17px;border-radius:10px;border:1px solid #16699e;background:#082944;color:white;font-weight:800}.actions .primary{background:linear-gradient(90deg,#177bdc,#6438ff);font-size:18px}
+.modal{display:none;position:fixed;inset:0;background:#000b;z-index:10;align-items:center;justify-content:center}.modal.open{display:flex}.dialog{width:min(760px,94vw);max-height:90vh;overflow:auto;background:#061827;border:1px solid #1b6b9a;border-radius:16px;padding:22px}.dialog h2{margin-top:0}.form{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field label{font-size:12px;color:#a8c9db;display:block;margin-bottom:6px}.field input,.field select{width:100%;padding:11px;border-radius:8px;border:1px solid #1a5275;background:#04111e;color:white}.dialog .wide{grid-column:1/-1}.dialog-actions{display:flex;gap:10px;justify-content:flex-end;margin-top:18px}.dialog-actions button{padding:11px 18px;border-radius:8px;border:1px solid #1d6da0;background:#0a3555;color:white}.dialog-actions .go{background:linear-gradient(90deg,#1684eb,#683cff)}
+.toast{position:fixed;right:20px;bottom:20px;background:#082b3e;border:1px solid #1b7aaa;padding:12px 16px;border-radius:10px;display:none;z-index:20}
+@media(max-width:1200px){.grid{grid-template-columns:repeat(2,1fr)}.lower{grid-template-columns:1fr}.app{grid-template-columns:210px 1fr}.hero:after{opacity:.3}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+ <div class="brand"><div class="logo">Ω</div><div><h1>AEGIS</h1><small>OMEGA AFRICA</small></div></div>
+ <div class="nav">
+  <button class="active" onclick="showDashboard()">⌂ <span data-i="dash">Dashboard</span></button>
+  <button onclick="openForm()">✚ <span data-i="new">New Crisis</span></button>
+  <button onclick="showHistory()">◷ <span data-i="history">History</span></button>
+  <button onclick="toast(t('stressSoon'))">♡ <span data-i="stress">Stress Test</span></button>
+  <button onclick="toast(t('aboutText'))">ⓘ <span data-i="about">About</span></button>
+ </div>
+ <div class="statusbox">
+  <b style="color:var(--green)" data-i="system">SYSTEM STATUS</b>
+  <div class="st"><span data-i="connection">Connection</span><span class="off">OFFLINE</span></div>
+  <div class="st"><span data-i="engine">Deterministic Engine</span><span class="ok">ACTIVE</span></div>
+  <div class="st"><span data-i="validation">Data Validation</span><span class="ok">READY</span></div>
+ </div>
+</aside>
+
+<main class="main">
+ <div class="topbar">
+   <div class="mode">⌁ <span data-i="offline">OFFLINE MODE</span> · <span style="color:#9fd4ed">System Fully Operational</span></div>
+   <div class="lang"><button id="enBtn" class="on" onclick="setLang('en')">🇺🇸 English</button><button id="frBtn" onclick="setLang('fr')">🇫🇷 Français</button></div>
+ </div>
+
+ <section class="hero"><h2 data-i="welcome">Welcome to AEGIS OMEGA AFRICA</h2><p data-i="hero1">Intelligent decisions in critical moments.</p><p data-i="hero2">You provide the situation. AEGIS provides the plan.</p></section>
+
+ <section class="steps">
+   <div class="step"><div class="n">1</div><div><b data-i="s1">Input Crisis Data</b><span class="sub" data-i="s1s">Enter verified facts</span></div></div>
+   <div class="step"><div class="n">2</div><div><b data-i="s2">Analyze Situation</b><span class="sub" data-i="s2s">Deterministic analysis</span></div></div>
+   <div class="step"><div class="n">3</div><div><b data-i="s3">Generate Plan</b><span class="sub" data-i="s3s">Resource-safe priorities</span></div></div>
+   <div class="step"><div class="n">4</div><div><b data-i="s4">Get Actionable Decision</b><span class="sub" data-i="s4s">Verified output</span></div></div>
+ </section>
+
+ <section class="grid">
+  <div class="card"><h3 data-i="sev">CRISIS SEVERITY</h3><div id="severity" class="severity">HIGH</div><div class="meter"></div></div>
+  <div class="card"><h3 data-i="conf">RULE CONFIDENCE</h3><div class="ring"><span id="confidence">98</span><small>/100</small></div></div>
+  <div class="card"><h3 data-i="ptime">PROCESSING TIME</h3><div id="ptime" class="time">0.000s</div><span class="sub">Deterministic core</span></div>
+  <div class="card"><h3 data-i="model">MODEL STATUS</h3><div class="ai">◉ LOCAL AI:<br>OPTIONAL</div><span class="sub">Qwen3-4B / llama.cpp</span></div>
+  <div class="card summary"><h3 data-i="quick">QUICK SUMMARY</h3><div id="summary"></div></div>
+ </section>
+
+ <section class="lower">
+  <div class="card priorities"><h3 data-i="top">TOP PRIORITY ACTIONS</h3><div id="priorities"><span class="sub" data-i="empty">Analyze a crisis to generate priorities.</span></div></div>
+  <div class="card"><h3 data-i="map">AFFECTED AREA VIEW</h3><div class="map"><div class="river"></div><div class="pin a">⌂</div><div class="pin b">✚</div><div class="pin c">!</div></div></div>
+  <div class="card"><h3 data-i="final">FINAL DECISION</h3><div class="decision"><h2>✓ <span data-i="verified">VERIFIED SAFE PLAN</span></h2><p id="decisionText" data-i="decisionIdle">Analyze a crisis to generate a verified operational plan.</p></div></div>
+ </section>
+
+ <section class="actions">
+  <button onclick="loadExample()">▣ <span data-i="load">LOAD SCENARIO</span></button>
+  <button class="primary" onclick="openForm()">⚡ <span data-i="analyze">ANALYZE CRISIS</span></button>
+  <button onclick="saveReport()">▤ <span data-i="save">SAVE REPORT</span></button>
+  <button onclick="exportJSON()">⇩ <span data-i="export">EXPORT JSON</span></button>
+ </section>
+</main>
+</div>
+
+<div class="modal" id="modal"><div class="dialog">
+<h2 data-i="newCrisis">New Crisis Analysis</h2>
+<div class="form">
+<div class="field"><label data-i="crisisType">Crisis type</label><select id="crisis"><option value="flood">Flood</option><option value="drought">Drought</option><option value="wildfire">Wildfire</option><option value="cyclone">Cyclone</option><option value="landslide">Landslide</option><option value="telecom blackout">Telecom Blackout</option></select></div>
+<div class="field"><label data-i="population">Population</label><input id="population" type="number" value="1200"></div>
+<div class="field"><label data-i="injured">Injured</label><input id="injured" type="number" value="35"></div>
+<div class="field"><label data-i="missing">Missing</label><input id="missing" type="number" value="8"></div>
+<div class="field"><label data-i="water">Clean water (L)</label><input id="clean_water_liters" type="number" value="200"></div>
+<div class="field"><label data-i="generator">Generator hours</label><input id="generator_hours" type="number" value="6"></div>
+<div class="field"><label data-i="nurses">Nurses</label><input id="nurses" type="number" value="2"></div>
+<div class="field"><label data-i="volunteers">Volunteers</label><input id="volunteers" type="number" value="12"></div>
+<div class="field"><label data-i="satphone">Satellite phones</label><input id="satellite_phones" type="number" value="1"></div>
+<div class="field"><label data-i="electricity">Electricity</label><select id="electricity"><option value="0">Unavailable</option><option value="1">Available</option></select></div>
+<div class="field"><label data-i="internet">Internet</label><select id="internet"><option value="0">Unavailable</option><option value="1">Available</option></select></div>
+</div>
+<div class="dialog-actions"><button onclick="closeForm()" data-i="cancel">Cancel</button><button class="go" onclick="analyze()" data-i="run">Run AEGIS</button></div>
+</div></div>
+<div class="toast" id="toast"></div>
+
+<script>
+const I={
+en:{dash:"Dashboard",new:"New Crisis",history:"History",stress:"Stress Test",about:"About",system:"SYSTEM STATUS",connection:"Connection",engine:"Deterministic Engine",validation:"Data Validation",offline:"OFFLINE MODE",welcome:"Welcome to AEGIS OMEGA AFRICA",hero1:"Intelligent decisions in critical moments.",hero2:"You provide the situation. AEGIS provides the plan.",s1:"Input Crisis Data",s1s:"Enter verified facts",s2:"Analyze Situation",s2s:"Deterministic analysis",s3:"Generate Plan",s3s:"Resource-safe priorities",s4:"Get Actionable Decision",s4s:"Verified output",sev:"CRISIS SEVERITY",conf:"RULE CONFIDENCE",ptime:"PROCESSING TIME",model:"MODEL STATUS",quick:"QUICK SUMMARY",top:"TOP PRIORITY ACTIONS",map:"AFFECTED AREA VIEW",final:"FINAL DECISION",verified:"VERIFIED SAFE PLAN",decisionIdle:"Analyze a crisis to generate a verified operational plan.",load:"LOAD SCENARIO",analyze:"ANALYZE CRISIS",save:"SAVE REPORT",export:"EXPORT JSON",newCrisis:"New Crisis Analysis",crisisType:"Crisis type",population:"Population",injured:"Injured",missing:"Missing",water:"Clean water (L)",generator:"Generator hours",nurses:"Nurses",volunteers:"Volunteers",satphone:"Satellite phones",electricity:"Electricity",internet:"Internet",cancel:"Cancel",run:"Run AEGIS",empty:"Analyze a crisis to generate priorities.",stressSoon:"Stress test remains available from the project package.",aboutText:"AEGIS OMEGA AFRICA · Offline crisis decision-support prototype."},
+fr:{dash:"Tableau de bord",new:"Nouvelle crise",history:"Historique",stress:"Test de stress",about:"À propos",system:"ÉTAT DU SYSTÈME",connection:"Connexion",engine:"Moteur déterministe",validation:"Validation des données",offline:"MODE HORS LIGNE",welcome:"Bienvenue dans AEGIS OMEGA AFRICA",hero1:"Des décisions intelligentes dans les moments critiques.",hero2:"Vous fournissez la situation. AEGIS fournit le plan.",s1:"Saisir les données",s1s:"Faits vérifiés",s2:"Analyser la situation",s2s:"Analyse déterministe",s3:"Générer le plan",s3s:"Priorités sûres",s4:"Obtenir la décision",s4s:"Sortie vérifiée",sev:"SÉVÉRITÉ DE LA CRISE",conf:"CONFIANCE DES RÈGLES",ptime:"TEMPS DE TRAITEMENT",model:"STATUT DU MODÈLE",quick:"RÉSUMÉ RAPIDE",top:"ACTIONS PRIORITAIRES",map:"VUE DE LA ZONE AFFECTÉE",final:"DÉCISION FINALE",verified:"PLAN SÛR VÉRIFIÉ",decisionIdle:"Analysez une crise pour générer un plan opérationnel vérifié.",load:"CHARGER SCÉNARIO",analyze:"ANALYSER LA CRISE",save:"SAUVEGARDER RAPPORT",export:"EXPORTER JSON",newCrisis:"Nouvelle analyse de crise",crisisType:"Type de crise",population:"Population",injured:"Blessés",missing:"Disparus",water:"Eau potable (L)",generator:"Heures générateur",nurses:"Infirmiers",volunteers:"Bénévoles",satphone:"Téléphones satellite",electricity:"Électricité",internet:"Internet",cancel:"Annuler",run:"Lancer AEGIS",empty:"Analysez une crise pour générer les priorités.",stressSoon:"Le test de stress reste disponible dans le package du projet.",aboutText:"AEGIS OMEGA AFRICA · Prototype local d'aide à la décision de crise."}
+};
+let lang="en", last=null;
+function t(k){return I[lang][k]||k}
+function setLang(l){lang=l;document.querySelectorAll("[data-i]").forEach(e=>e.textContent=t(e.dataset.i));document.getElementById("enBtn").classList.toggle("on",l==="en");document.getElementById("frBtn").classList.toggle("on",l==="fr");render(last)}
+function openForm(){document.getElementById("modal").classList.add("open")}
+function closeForm(){document.getElementById("modal").classList.remove("open")}
+function n(id){return Number(document.getElementById(id).value)}
+function payload(){return {crisis:document.getElementById("crisis").value,population:n("population"),injured:n("injured"),missing:n("missing"),clean_water_liters:n("clean_water_liters"),generator_hours:n("generator_hours"),nurses:n("nurses"),volunteers:n("volunteers"),satellite_phones:n("satellite_phones"),electricity:n("electricity"),internet:n("internet")}}
+async function analyze(){const p=payload();try{const r=await fetch("/api/analyze",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(p)});const d=await r.json();if(!d.ok)throw new Error((d.errors||[]).join("\n"));last=d;localStorage.setItem("aegisLast",JSON.stringify(d));const h=JSON.parse(localStorage.getItem("aegisHistory")||"[]");h.unshift(d);localStorage.setItem("aegisHistory",JSON.stringify(h.slice(0,20)));render(d);closeForm();toast(lang==="fr"?"Analyse terminée et vérifiée.":"Analysis complete and verified.")}catch(e){alert(e.message)}}
+function render(d){if(!d)return;document.getElementById("severity").textContent=d.severity.label;document.getElementById("confidence").textContent=d.rule_confidence;document.getElementById("ptime").textContent=(d.immediate_decision_sec||0).toFixed(6)+"s";const x=d.input;document.getElementById("summary").innerHTML=[["Population",x.population],["Injured / Blessés",x.injured],["Missing / Disparus",x.missing],["Water / Eau",x.clean_water_liters+" L"],["Nurses / Infirmiers",x.nurses],["Volunteers / Bénévoles",x.volunteers]].map(a=>`<div class="row"><span>${a[0]}</span><b>${a[1]}</b></div>`).join("");document.getElementById("priorities").innerHTML=d.decision.priorities.map((p,i)=>`<div class="priority"><span class="badge">${i+1}</span><span>${p}</span><span class="${i<2?"p1":""}">${i<2?"P1":i<4?"P2":"P3"}</span></div>`).join("");document.getElementById("decisionText").textContent=lang==="fr"?"Plan déterministe vérifié. Les ressources déclarées sont respectées et les inconnues restent explicitement signalées.":"Verified deterministic plan generated. Declared resource limits are preserved and unknowns remain explicitly identified."}
+function loadExample(){document.getElementById("crisis").value="flood";["population","injured","missing","clean_water_liters","generator_hours","nurses","volunteers","satellite_phones"].forEach(id=>document.getElementById(id).value={population:1200,injured:35,missing:8,clean_water_liters:200,generator_hours:6,nurses:2,volunteers:12,satellite_phones:1}[id]);openForm()}
+function exportJSON(){if(!last)return toast("Run AEGIS first.");const b=new Blob([JSON.stringify(last,null,2)],{type:"application/json"}),a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="aegis_decision.json";a.click()}
+function saveReport(){if(!last)return toast("Run AEGIS first.");const text=`AEGIS OMEGA AFRICA\nSTATUS: ${last.status}\nSEVERITY: ${last.severity.label} (${last.severity.score}/100)\nRULE CONFIDENCE: ${last.rule_confidence}/100\n\nPRIORITIES\n`+last.decision.priorities.map((p,i)=>`${i+1}. ${p}`).join("\n")+"\n\nRISKS\n"+last.decision.risks.map(x=>"- "+x).join("\n")+"\n\nDEPENDENCIES\n"+last.decision.dependencies.map(x=>"- "+x).join("\n");const b=new Blob([text],{type:"text/plain"}),a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="AEGIS_Report.txt";a.click()}
+function showHistory(){const h=JSON.parse(localStorage.getItem("aegisHistory")||"[]");toast(h.length?(lang==="fr"?`${h.length} analyses enregistrées localement.`:`${h.length} analyses stored locally.`):(lang==="fr"?"Aucun historique.":"No history yet."))}
+function showDashboard(){window.scrollTo({top:0,behavior:"smooth"})}
+function toast(s){const e=document.getElementById("toast");e.textContent=s;e.style.display="block";setTimeout(()=>e.style.display="none",2600)}
+last=JSON.parse(localStorage.getItem("aegisLast")||"null");render(last);
+fetch("/api/health").catch(()=>toast("Local engine unavailable."));
+</script>
+</body></html>

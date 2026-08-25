@@ -1,0 +1,11 @@
+AEGIS OMEGA AFRICA V8
+
+The deterministic core is designed to run with the Python standard library.
+
+No pip-installed package is required by the packaged V8 code path.
+
+Optional local AI is provided externally by llama.cpp:
+
+llama-server.exe + Qwen3-4B-Q4_K_M.gguf
+
+Recommended Python: 3.10+

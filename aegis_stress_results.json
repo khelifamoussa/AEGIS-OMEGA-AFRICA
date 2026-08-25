@@ -1,0 +1,633 @@
+{
+  "system": "AEGIS OMEGA AFRICA",
+  "version": "8.2-competition-final",
+  "valid_tests_passed": 10,
+  "valid_tests_total": 10,
+  "invalid_tests_passed": 8,
+  "invalid_tests_total": 8,
+  "total_test_seconds": 0.014343899998493725,
+  "final_status": "STRESS TEST PASSED",
+  "tests": [
+    {
+      "name": "Severe Flood",
+      "status": "PASS",
+      "severity": "CRITICAL",
+      "severity_score": 88,
+      "confidence": 98,
+      "time": 0.00012760000026901253,
+      "errors": [],
+      "plan": {
+        "priorities": [
+          "Prioritize assessment of the 35 reported injured using the 2 available nurses.",
+          "Prioritize locating the 8 reported missing people using the 12 available volunteers within their known safe capabilities.",
+          "Protect and ration the available 200 L of clean water; additional water availability is UNKNOWN.",
+          "Preserve the available 6 generator-hours until a verified critical use and compatible load are known.",
+          "Preserve the 1 satellite phone for prioritized coordination if connectivity is available; signal availability is UNKNOWN."
+        ],
+        "allocation": {
+          "clean_water_liters_available": 200,
+          "generator_hours_available": 6,
+          "nurses_available": 2,
+          "volunteers_available": 12,
+          "satellite_phones_available": 1
+        },
+        "risks": [
+          "Injured people may deteriorate while trained personnel are limited.",
+          "Missing people remain at risk while their condition and location are unknown.",
+          "Clean-water availability is severely constrained relative to the population."
+        ],
+        "dependencies": [
+          "Medical prioritization depends on the 2 available nurses.",
+          "Search activity depends on the 12 available volunteers and safe access.",
+          "External coordination via satellite phone depends on actual signal availability."
+        ],
+        "facts": {
+          "crisis": "flood",
+          "population": 1200,
+          "injured": 35,
+          "missing": 8,
+          "clean_water_liters": 200,
+          "generator_hours": 6,
+          "nurses": 2,
+          "volunteers": 12,
+          "satellite_phones": 1,
+          "electricity": 0,
+          "internet": 0
+        },
+        "unknowns": [
+          "Locations and conditions of the missing people.",
+          "Severity distribution of the reported injuries.",
+          "Availability of additional water, food, medicine, shelter, transport, or personnel.",
+          "Generator load compatibility and safe operating conditions.",
+          "Satellite-phone signal availability and reachable external responders.",
+          "Flood evolution, road access, weather, and structural hazards."
+        ]
+      }
+    },
+    {
+      "name": "Drought",
+      "status": "PASS",
+      "severity": "HIGH",
+      "severity_score": 50,
+      "confidence": 98,
+      "time": 7.049999840091914e-05,
+      "errors": [],
+      "plan": {
+        "priorities": [
+          "Prioritize assessment of the 10 reported injured using the 3 available nurses.",
+          "Protect and ration the available 500 L of clean water; additional water availability is UNKNOWN.",
+          "Preserve the available 4 generator-hours until a verified critical use and compatible load are known.",
+          "Preserve the 1 satellite phone for prioritized coordination if connectivity is available; signal availability is UNKNOWN.",
+          "Reassess verified facts before committing additional scarce resources."
+        ],
+        "allocation": {
+          "clean_water_liters_available": 500,
+          "generator_hours_available": 4,
+          "nurses_available": 3,
+          "volunteers_available": 20,
+          "satellite_phones_available": 1
+        },
+        "risks": [
+          "Injured people may deteriorate while trained personnel are limited.",
+          "Missing people remain at risk while their condition and location are unknown.",
+          "Clean-water availability is severely constrained relative to the population."
+        ],
+        "dependencies": [
+          "Medical prioritization depends on the 3 available nurses.",
+          "Search activity depends on the 20 available volunteers and safe access.",
+          "External coordination via satellite phone depends on actual signal availability."
+        ],
+        "facts": {
+          "crisis": "drought",
+          "population": 3500,
+          "injured": 10,
+          "missing": 0,
+          "clean_water_liters": 500,
+          "generator_hours": 4,
+          "nurses": 3,
+          "volunteers": 20,
+          "satellite_phones": 1,
+          "electricity": 0,
+          "internet": 0
+        },
+        "unknowns": [
+          "Locations and conditions of the missing people.",
+          "Severity distribution of the reported injuries.",
+          "Availability of additional water, food, medicine, shelter, transport, or personnel.",
+          "Generator load compatibility and safe operating conditions.",
+          "Satellite-phone signal availability and reachable external responders.",
+          "Flood evolution, road access, weather, and structural hazards."
+        ]
+      }
+    },
+    {
+      "name": "Cyclone",
+      "status": "PASS",
+      "severity": "CRITICAL",
+      "severity_score": 80,
+      "confidence": 98,
+      "time": 9.15000018721912e-05,
+      "errors": [],
+      "plan": {
+        "priorities": [
+          "Prioritize assessment of the 80 reported injured using the 4 available nurses.",
+          "Prioritize locating the 25 reported missing people using the 30 available volunteers within their known safe capabilities.",
+          "Protect and ration the available 350 L of clean water; additional water availability is UNKNOWN.",
+          "Preserve the available 8 generator-hours until a verified critical use and compatible load are known.",
+          "Preserve the 2 satellite phone for prioritized coordination if connectivity is available; signal availability is UNKNOWN."
+        ],
+        "allocation": {
+          "clean_water_liters_available": 350,
+          "generator_hours_available": 8,
+          "nurses_available": 4,
+          "volunteers_available": 30,
+          "satellite_phones_available": 2
+        },
+        "risks": [
+          "Injured people may deteriorate while trained personnel are limited.",
+          "Missing people remain at risk while their condition and location are unknown.",
+          "Clean-water availability is severely constrained relative to the population."
+        ],
+        "dependencies": [
+          "Medical prioritization depends on the 4 available nurses.",
+          "Search activity depends on the 30 available volunteers and safe access.",
+          "External coordination via satellite phone depends on actual signal availability."
+        ],
+        "facts": {
+          "crisis": "cyclone",
+          "population": 2200,
+          "injured": 80,
+          "missing": 25,
+          "clean_water_liters": 350,
+          "generator_hours": 8,
+          "nurses": 4,
+          "volunteers": 30,
+          "satellite_phones": 2,
+          "electricity": 0,
+          "internet": 0
+        },
+        "unknowns": [
+          "Locations and conditions of the missing people.",
+          "Severity distribution of the reported injuries.",
+          "Availability of additional water, food, medicine, shelter, transport, or personnel.",
+          "Generator load compatibility and safe operating conditions.",
+          "Satellite-phone signal availability and reachable external responders.",
+          "Flood evolution, road access, weather, and structural hazards."
+        ]
+      }
+    },
+    {
+      "name": "Wildfire",
+      "status": "PASS",
+      "severity": "HIGH",
+      "severity_score": 69,
+      "confidence": 98,
+      "time": 5.989999772282317e-05,
+      "errors": [],
+      "plan": {
+        "priorities": [
+          "Prioritize assessment of the 55 reported injured using the 3 available nurses.",
+          "Prioritize locating the 6 reported missing people using the 25 available volunteers within their known safe capabilities.",
+          "Protect and ration the available 300 L of clean water; additional water availability is UNKNOWN.",
+          "Preserve the available 5 generator-hours until a verified critical use and compatible load are known.",
+          "Preserve the 1 satellite phone for prioritized coordination if connectivity is available; signal availability is UNKNOWN."
+        ],
+        "allocation": {
+          "clean_water_liters_available": 300,
+          "generator_hours_available": 5,
+          "nurses_available": 3,
+          "volunteers_available": 25,
+          "satellite_phones_available": 1
+        },
+        "risks": [
+          "Injured people may deteriorate while trained personnel are limited.",
+          "Missing people remain at risk while their condition and location are unknown.",
+          "Clean-water availability is severely constrained relative to the population."
+        ],
+        "dependencies": [
+          "Medical prioritization depends on the 3 available nurses.",
+          "Search activity depends on the 25 available volunteers and safe access.",
+          "External coordination via satellite phone depends on actual signal availability."
+        ],
+        "facts": {
+          "crisis": "wildfire",
+          "population": 1800,
+          "injured": 55,
+          "missing": 6,
+          "clean_water_liters": 300,
+          "generator_hours": 5,
+          "nurses": 3,
+          "volunteers": 25,
+          "satellite_phones": 1,
+          "electricity": 1,
+          "internet": 0
+        },
+        "unknowns": [
+          "Locations and conditions of the missing people.",
+          "Severity distribution of the reported injuries.",
+          "Availability of additional water, food, medicine, shelter, transport, or personnel.",
+          "Generator load compatibility and safe operating conditions.",
+          "Satellite-phone signal availability and reachable external responders.",
+          "Flood evolution, road access, weather, and structural hazards."
+        ]
+      }
+    },
+    {
+      "name": "Landslide",
+      "status": "PASS",
+      "severity": "CRITICAL",
+      "severity_score": 95,
+      "confidence": 98,
+      "time": 4.999999873689376e-05,
+      "errors": [],
+      "plan": {
+        "priorities": [
+          "Prioritize assessment of the 45 reported injured using the 2 available nurses.",
+          "Prioritize locating the 20 reported missing people using the 18 available volunteers within their known safe capabilities.",
+          "Protect and ration the available 160 L of clean water; additional water availability is UNKNOWN.",
+          "Preserve the available 4 generator-hours until a verified critical use and compatible load are known.",
+          "Preserve the 1 satellite phone for prioritized coordination if connectivity is available; signal availability is UNKNOWN."
+        ],
+        "allocation": {
+          "clean_water_liters_available": 160,
+          "generator_hours_available": 4,
+          "nurses_available": 2,
+          "volunteers_available": 18,
+          "satellite_phones_available": 1
+        },
+        "risks": [
+          "Injured people may deteriorate while trained personnel are limited.",
+          "Missing people remain at risk while their condition and location are unknown.",
+          "Clean-water availability is severely constrained relative to the population."
+        ],
+        "dependencies": [
+          "Medical prioritization depends on the 2 available nurses.",
+          "Search activity depends on the 18 available volunteers and safe access.",
+          "External coordination via satellite phone depends on actual signal availability."
+        ],
+        "facts": {
+          "crisis": "landslide",
+          "population": 900,
+          "injured": 45,
+          "missing": 20,
+          "clean_water_liters": 160,
+          "generator_hours": 4,
+          "nurses": 2,
+          "volunteers": 18,
+          "satellite_phones": 1,
+          "electricity": 0,
+          "internet": 0
+        },
+        "unknowns": [
+          "Locations and conditions of the missing people.",
+          "Severity distribution of the reported injuries.",
+          "Availability of additional water, food, medicine, shelter, transport, or personnel.",
+          "Generator load compatibility and safe operating conditions.",
+          "Satellite-phone signal availability and reachable external responders.",
+          "Flood evolution, road access, weather, and structural hazards."
+        ]
+      }
+    },
+    {
+      "name": "Clinic Power Failure",
+      "status": "PASS",
+      "severity": "HIGH",
+      "severity_score": 54,
+      "confidence": 98,
+      "time": 8.420000085607171e-05,
+      "errors": [],
+      "plan": {
+        "priorities": [
+          "Prioritize assessment of the 28 reported injured using the 4 available nurses.",
+          "Protect and ration the available 120 L of clean water; additional water availability is UNKNOWN.",
+          "Preserve the available 3 generator-hours until a verified critical use and compatible load are known.",
+          "Preserve the 1 satellite phone for prioritized coordination if connectivity is available; signal availability is UNKNOWN.",
+          "Reassess verified facts before committing additional scarce resources."
+        ],
+        "allocation": {
+          "clean_water_liters_available": 120,
+          "generator_hours_available": 3,
+          "nurses_available": 4,
+          "volunteers_available": 10,
+          "satellite_phones_available": 1
+        },
+        "risks": [
+          "Injured people may deteriorate while trained personnel are limited.",
+          "Missing people remain at risk while their condition and location are unknown.",
+          "Clean-water availability is severely constrained relative to the population."
+        ],
+        "dependencies": [
+          "Medical prioritization depends on the 4 available nurses.",
+          "Search activity depends on the 10 available volunteers and safe access.",
+          "External coordination via satellite phone depends on actual signal availability."
+        ],
+        "facts": {
+          "crisis": "clinic_outage",
+          "population": 700,
+          "injured": 28,
+          "missing": 0,
+          "clean_water_liters": 120,
+          "generator_hours": 3,
+          "nurses": 4,
+          "volunteers": 10,
+          "satellite_phones": 1,
+          "electricity": 0,
+          "internet": 1
+        },
+        "unknowns": [
+          "Locations and conditions of the missing people.",
+          "Severity distribution of the reported injuries.",
+          "Availability of additional water, food, medicine, shelter, transport, or personnel.",
+          "Generator load compatibility and safe operating conditions.",
+          "Satellite-phone signal availability and reachable external responders.",
+          "Flood evolution, road access, weather, and structural hazards."
+        ]
+      }
+    },
+    {
+      "name": "Telecom Blackout",
+      "status": "PASS",
+      "severity": "MODERATE",
+      "severity_score": 43,
+      "confidence": 98,
+      "time": 8.510000043315813e-05,
+      "errors": [],
+      "plan": {
+        "priorities": [
+          "Prioritize assessment of the 5 reported injured using the 5 available nurses.",
+          "Prioritize locating the 3 reported missing people using the 24 available volunteers within their known safe capabilities.",
+          "Protect and ration the available 600 L of clean water; additional water availability is UNKNOWN.",
+          "Preserve the available 7 generator-hours until a verified critical use and compatible load are known.",
+          "Preserve the 2 satellite phone for prioritized coordination if connectivity is available; signal availability is UNKNOWN."
+        ],
+        "allocation": {
+          "clean_water_liters_available": 600,
+          "generator_hours_available": 7,
+          "nurses_available": 5,
+          "volunteers_available": 24,
+          "satellite_phones_available": 2
+        },
+        "risks": [
+          "Injured people may deteriorate while trained personnel are limited.",
+          "Missing people remain at risk while their condition and location are unknown.",
+          "Clean-water availability is severely constrained relative to the population."
+        ],
+        "dependencies": [
+          "Medical prioritization depends on the 5 available nurses.",
+          "Search activity depends on the 24 available volunteers and safe access.",
+          "External coordination via satellite phone depends on actual signal availability."
+        ],
+        "facts": {
+          "crisis": "telecom_outage",
+          "population": 4000,
+          "injured": 5,
+          "missing": 3,
+          "clean_water_liters": 600,
+          "generator_hours": 7,
+          "nurses": 5,
+          "volunteers": 24,
+          "satellite_phones": 2,
+          "electricity": 1,
+          "internet": 0
+        },
+        "unknowns": [
+          "Locations and conditions of the missing people.",
+          "Severity distribution of the reported injuries.",
+          "Availability of additional water, food, medicine, shelter, transport, or personnel.",
+          "Generator load compatibility and safe operating conditions.",
+          "Satellite-phone signal availability and reachable external responders.",
+          "Flood evolution, road access, weather, and structural hazards."
+        ]
+      }
+    },
+    {
+      "name": "Water Contamination",
+      "status": "PASS",
+      "severity": "MODERATE",
+      "severity_score": 45,
+      "confidence": 98,
+      "time": 5.480000254465267e-05,
+      "errors": [],
+      "plan": {
+        "priorities": [
+          "Prioritize assessment of the 20 reported injured using the 3 available nurses.",
+          "Protect and ration the available 180 L of clean water; additional water availability is UNKNOWN.",
+          "Preserve the available 5 generator-hours until a verified critical use and compatible load are known.",
+          "Preserve the 1 satellite phone for prioritized coordination if connectivity is available; signal availability is UNKNOWN.",
+          "Reassess verified facts before committing additional scarce resources."
+        ],
+        "allocation": {
+          "clean_water_liters_available": 180,
+          "generator_hours_available": 5,
+          "nurses_available": 3,
+          "volunteers_available": 18,
+          "satellite_phones_available": 1
+        },
+        "risks": [
+          "Injured people may deteriorate while trained personnel are limited.",
+          "Missing people remain at risk while their condition and location are unknown.",
+          "Clean-water availability is severely constrained relative to the population."
+        ],
+        "dependencies": [
+          "Medical prioritization depends on the 3 available nurses.",
+          "Search activity depends on the 18 available volunteers and safe access.",
+          "External coordination via satellite phone depends on actual signal availability."
+        ],
+        "facts": {
+          "crisis": "water_contamination",
+          "population": 2600,
+          "injured": 20,
+          "missing": 0,
+          "clean_water_liters": 180,
+          "generator_hours": 5,
+          "nurses": 3,
+          "volunteers": 18,
+          "satellite_phones": 1,
+          "electricity": 1,
+          "internet": 0
+        },
+        "unknowns": [
+          "Locations and conditions of the missing people.",
+          "Severity distribution of the reported injuries.",
+          "Availability of additional water, food, medicine, shelter, transport, or personnel.",
+          "Generator load compatibility and safe operating conditions.",
+          "Satellite-phone signal availability and reachable external responders.",
+          "Flood evolution, road access, weather, and structural hazards."
+        ]
+      }
+    },
+    {
+      "name": "Remote Village Isolation",
+      "status": "PASS",
+      "severity": "CRITICAL",
+      "severity_score": 76,
+      "confidence": 98,
+      "time": 0.00012509999942267314,
+      "errors": [],
+      "plan": {
+        "priorities": [
+          "Prioritize assessment of the 18 reported injured using the 2 available nurses.",
+          "Prioritize locating the 4 reported missing people using the 15 available volunteers within their known safe capabilities.",
+          "Protect and ration the available 250 L of clean water; additional water availability is UNKNOWN.",
+          "Preserve the available 5 generator-hours until a verified critical use and compatible load are known.",
+          "Preserve the 1 satellite phone for prioritized coordination if connectivity is available; signal availability is UNKNOWN."
+        ],
+        "allocation": {
+          "clean_water_liters_available": 250,
+          "generator_hours_available": 5,
+          "nurses_available": 2,
+          "volunteers_available": 15,
+          "satellite_phones_available": 1
+        },
+        "risks": [
+          "Injured people may deteriorate while trained personnel are limited.",
+          "Missing people remain at risk while their condition and location are unknown.",
+          "Clean-water availability is severely constrained relative to the population."
+        ],
+        "dependencies": [
+          "Medical prioritization depends on the 2 available nurses.",
+          "Search activity depends on the 15 available volunteers and safe access.",
+          "External coordination via satellite phone depends on actual signal availability."
+        ],
+        "facts": {
+          "crisis": "infrastructure_failure",
+          "population": 1500,
+          "injured": 18,
+          "missing": 4,
+          "clean_water_liters": 250,
+          "generator_hours": 5,
+          "nurses": 2,
+          "volunteers": 15,
+          "satellite_phones": 1,
+          "electricity": 0,
+          "internet": 0
+        },
+        "unknowns": [
+          "Locations and conditions of the missing people.",
+          "Severity distribution of the reported injuries.",
+          "Availability of additional water, food, medicine, shelter, transport, or personnel.",
+          "Generator load compatibility and safe operating conditions.",
+          "Satellite-phone signal availability and reachable external responders.",
+          "Flood evolution, road access, weather, and structural hazards."
+        ]
+      }
+    },
+    {
+      "name": "Mass Casualty Event",
+      "status": "PASS",
+      "severity": "CRITICAL",
+      "severity_score": 80,
+      "confidence": 98,
+      "time": 8.480000178678893e-05,
+      "errors": [],
+      "plan": {
+        "priorities": [
+          "Prioritize assessment of the 250 reported injured using the 8 available nurses.",
+          "Prioritize locating the 30 reported missing people using the 50 available volunteers within their known safe capabilities.",
+          "Protect and ration the available 700 L of clean water; additional water availability is UNKNOWN.",
+          "Preserve the available 12 generator-hours until a verified critical use and compatible load are known.",
+          "Preserve the 3 satellite phone for prioritized coordination if connectivity is available; signal availability is UNKNOWN."
+        ],
+        "allocation": {
+          "clean_water_liters_available": 700,
+          "generator_hours_available": 12,
+          "nurses_available": 8,
+          "volunteers_available": 50,
+          "satellite_phones_available": 3
+        },
+        "risks": [
+          "Injured people may deteriorate while trained personnel are limited.",
+          "Missing people remain at risk while their condition and location are unknown.",
+          "Clean-water availability is severely constrained relative to the population."
+        ],
+        "dependencies": [
+          "Medical prioritization depends on the 8 available nurses.",
+          "Search activity depends on the 50 available volunteers and safe access.",
+          "External coordination via satellite phone depends on actual signal availability."
+        ],
+        "facts": {
+          "crisis": "mass_casualty",
+          "population": 5000,
+          "injured": 250,
+          "missing": 30,
+          "clean_water_liters": 700,
+          "generator_hours": 12,
+          "nurses": 8,
+          "volunteers": 50,
+          "satellite_phones": 3,
+          "electricity": 0,
+          "internet": 0
+        },
+        "unknowns": [
+          "Locations and conditions of the missing people.",
+          "Severity distribution of the reported injuries.",
+          "Availability of additional water, food, medicine, shelter, transport, or personnel.",
+          "Generator load compatibility and safe operating conditions.",
+          "Satellite-phone signal availability and reachable external responders.",
+          "Flood evolution, road access, weather, and structural hazards."
+        ]
+      }
+    }
+  ],
+  "invalid_tests": [
+    {
+      "name": "injured > population",
+      "status": "PASS",
+      "errors_detected": [
+        "injured cannot exceed population",
+        "injured + missing cannot exceed population"
+      ]
+    },
+    {
+      "name": "missing > population",
+      "status": "PASS",
+      "errors_detected": [
+        "missing cannot exceed population",
+        "injured + missing cannot exceed population"
+      ]
+    },
+    {
+      "name": "injured + missing > population",
+      "status": "PASS",
+      "errors_detected": [
+        "injured + missing cannot exceed population"
+      ]
+    },
+    {
+      "name": "negative resource",
+      "status": "PASS",
+      "errors_detected": [
+        "clean_water_liters cannot be negative"
+      ]
+    },
+    {
+      "name": "invalid electricity flag",
+      "status": "PASS",
+      "errors_detected": [
+        "electricity must be 0 or 1"
+      ]
+    },
+    {
+      "name": "invalid internet flag",
+      "status": "PASS",
+      "errors_detected": [
+        "internet cannot be negative",
+        "internet must be 0 or 1"
+      ]
+    },
+    {
+      "name": "empty crisis",
+      "status": "PASS",
+      "errors_detected": [
+        "crisis cannot be empty"
+      ]
+    },
+    {
+      "name": "boolean numeric field",
+      "status": "PASS",
+      "errors_detected": [
+        "Invalid type for population"
+      ]
+    }
+  ]
+}
