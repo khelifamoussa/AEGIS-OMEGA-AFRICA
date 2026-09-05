@@ -1,0 +1,29 @@
+{
+  "expo": {
+    "name": "NEXORA",
+    "slug": "nexora",
+    "version": "0.3.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "plugins": [
+      [
+        "expo-sensors",
+        {
+          "motionPermission": "Allow NEXORA to use motion sensors for safety features."
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Allow NEXORA to use your location for safety and navigation."
+        }
+      ]
+    ],
+    "android": {
+      "package": "com.nexora.guardian"
+    },
+    "ios": {
+      "bundleIdentifier": "com.nexora.guardian"
+    }
+  }
+}
